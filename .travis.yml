@@ -1,0 +1,16 @@
+sudo: required
+
+services:
+  - docker
+
+language: node_js
+
+node_js:
+  - node
+
+branches:
+  only:
+    - master
+
+script:
+  - echo 'infra'
