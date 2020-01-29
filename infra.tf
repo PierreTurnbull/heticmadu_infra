@@ -1,8 +1,5 @@
 provider "aws" {
-    profile     = "heticmadu"
-    region      = "eu-west-3"
-    access_key  = "AKIA524XWM7EJLHTWU57"
-    secret_key  = "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"
+    region  = "eu-west-3"
 }
 
 resource "aws_key_pair" "heticmadu_key_pair" {
@@ -28,7 +25,7 @@ resource "aws_vpc" "heticmadu_vpc" {
 }
 
 resource "aws_security_group" "heticmadu_security_group" {
-    vpc_id          = aws_vpc.heticmadu_vpc.id
+    vpc_id          = "${aws_vpc.heticmadu_vpc.id}"
     name            = "heticmadu"
     ingress {
         from_port   = 22
