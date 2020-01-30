@@ -13,4 +13,8 @@ branches:
     - master
 
 script:
-  - echo 'infra'
+  - wget https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
+  - unzip terraform_0.12.18_linux_amd64.zip
+  - ./terraform --version
+  - ./terraform init
+  - ./terraform apply -auto-approve
