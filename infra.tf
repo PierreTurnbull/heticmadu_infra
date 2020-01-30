@@ -8,21 +8,24 @@ resource "aws_key_pair" "heticmadu_key_pair" {
 }
 
 resource "aws_instance" "heticmadu_instance" {
-    ami             = "ami-087855b6c8b59a9e4"
-    instance_type   = "t2.micro"
-    key_name        = "heticmadu"
+    ami                     = "ami-087855b6c8b59a9e4"
+    instance_type           = "t2.micro"
+    key_name                = "heticmadu"
+    vpc_security_group_ids  = ["${aws_security_group.heticmadu_security_group.id}"]
     tags = {
         Name = "heticmadu"
     }
 }
 
 resource "aws_default_vpc" "heticmadu_default_vpc" {
-  tags = {
-    Name = "heticmadu"
-  }
+    tags = {
+        Name = "heticmadu"
+    }
 }
 
-resource "aws_default_security_group" "heticmadu_default_security_group" {
+resource "aws_security_group" "heticmadu_security_group" {
+    name            = "heticmadu"
+    description     = "heticmadu security group"
     vpc_id          = "${aws_default_vpc.heticmadu_default_vpc.id}"
     ingress {
         from_port   = 22
@@ -47,5 +50,8 @@ resource "aws_default_security_group" "heticmadu_default_security_group" {
         to_port         = 0
         protocol        = "-1"
         cidr_blocks     = ["0.0.0.0/0"]
+    }
+    tags = {
+        Name = "heticmadu"
     }
 }
