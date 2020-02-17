@@ -17,11 +17,7 @@ resource "aws_instance" "heticmadu_instance" {
     }
 }
 
-resource "aws_default_vpc" "heticmadu_default_vpc" {
-    tags = {
-        Name = "heticmadu"
-    }
-}
+resource "aws_default_vpc" "heticmadu_default_vpc" {}
 
 resource "aws_security_group" "heticmadu_security_group" {
     name            = "heticmadu"
