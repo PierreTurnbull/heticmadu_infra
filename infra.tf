@@ -52,30 +52,3 @@ resource "aws_security_group" "heticmadu_security_group" {
     Name = "heticmadu"
   }
 }
-
-resource "aws_s3_bucket" "bucket" {
-  bucket = "heticmadu-bucket"
-  acl = "private"
-}
-
-# terraform {
-#   backend "s3" {
-#     bucket = "heticmadu-tfstate"
-#     key    = "./terraform.tfstate"
-#     region = "eu-west-3"
-#   }
-# }
-
-# resource "aws_s3_bucket" "bucket" {
-#   bucket = "heticmadu-bucket"
-#   acl    = "private"
-# }
-
-# data "terraform_remote_state" "remote_state" {
-#   backend = "s3"
-#   config = {
-#     bucket = "heticmadu-bucket"
-#     key    = "./terraform.tfstate"
-#     region = "eu-west-3"
-#   }
-# }
