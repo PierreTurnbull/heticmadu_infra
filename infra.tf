@@ -11,7 +11,7 @@ resource "aws_instance" "heticmadu_instance" {
     ami                     = "ami-087855b6c8b59a9e4"
     instance_type           = "t2.micro"
     key_name                = "heticmadu"
-    vpc_security_group_ids  = ["${aws_security_group.heticmadu_security_group.id}"]
+    vpc_security_group_ids  = [aws_security_group.heticmadu_security_group.id]
     tags = {
         Name = "heticmadu"
     }
@@ -22,7 +22,7 @@ resource "aws_default_vpc" "heticmadu_default_vpc" {}
 resource "aws_security_group" "heticmadu_security_group" {
     name            = "heticmadu"
     description     = "heticmadu security group"
-    vpc_id          = "${aws_default_vpc.heticmadu_default_vpc.id}"
+    vpc_id          = aws_default_vpc.heticmadu_default_vpc.id
     ingress {
         from_port   = 22
         to_port     = 22
