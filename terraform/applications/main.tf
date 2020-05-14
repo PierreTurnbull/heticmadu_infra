@@ -9,6 +9,7 @@ module "api" {
 }
 
 module "db" {
-  source          = "./db"
-  stage           = var.stage
+  source                        = "./db"
+  stage                         = var.stage
+  authorized_security_group_id  = module.api.authorized_security_group_id
 }

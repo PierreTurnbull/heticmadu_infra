@@ -46,3 +46,7 @@ resource "aws_security_group" "api" {
     Name = "heticmadu-${var.stage}-api"
   }
 }
+
+output "authorized_security_group_id" {
+  value = aws_security_group.api.id
+}
