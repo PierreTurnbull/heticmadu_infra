@@ -35,3 +35,7 @@ resource "aws_db_instance" "db" {
 # TODO : bucket backup
 
 # TODO : backup hook before rebuilding prod db
+
+# TODO : put real password (encrypted)
+
+# TODO : remove vpc_id

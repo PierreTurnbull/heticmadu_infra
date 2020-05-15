@@ -13,6 +13,7 @@ resource "aws_instance" "client" {
   tags = {
     Name      = "heticmadu-${var.stage}-client"
     stage     = var.stage
+    component = "client"
   }
 }
 
