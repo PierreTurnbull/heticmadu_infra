@@ -2,6 +2,29 @@
 
 The infrastructure deployment code for a school project.
 
+## TL;DR
+
+_If you don't have time._
+
+```bash
+# replace with real values
+export AWS_ACCESS_KEY_ID=<id>
+export AWS_SECRET_ACCESS_KEY=<secret>
+export TF_VAR_db_username=<username>
+export TF_VAR_db_password=<password>
+export SSH_KEY_PATH=<path>
+
+# don't bother reading
+export BOTO_USE_ENDPOINT_HEURISTICS=true
+pip install boto ansible
+cd terraform
+terraform init
+terraform apply --auto-approve
+cd ../ansible
+ansible-galaxy role install -r requirements.yml
+ansible-playbook ./main.yml --user ubuntu --key $SSH_KEY_PATH -i ./inventory/ec2.py
+```
+
 ## How it works
 
 This repository is meant to create and configure the infrastructure. Application deployment is done on application repositories ([api](https://github.com/PierreTurnbull/heticmadu_api) and [client](https://github.com/ikonx/heticmadu_client)). First, deploy the infrastructure from this repository. Then you can deploy the applications on the newly created infrastructure, by pushing your changes on branch master or preprod of the application.
