@@ -15,4 +15,6 @@
     name:
       - docker
       - docker-compose
+      - boto3
+      - botocore
     executable: pip3

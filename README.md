@@ -38,6 +38,13 @@ cd terraform
 terraform init
 ```
 
+Prepare credentials for the database:
+
+```
+export TF_VAR_db_username=<username>
+export TF_VAR_db_password=<password>
+```
+
 To deploy the infrastructure, run
 
 ```bash
@@ -45,8 +52,6 @@ terraform apply [--auto-approve]
 ```
 
 ### Configure the resources created with Ansible
-
-Prepare the workspace
 
 ```bash
 cd ../ansible
