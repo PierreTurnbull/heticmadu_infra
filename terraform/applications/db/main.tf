@@ -31,53 +31,11 @@ resource "aws_db_instance" "db" {
   multi_az                    = true
   skip_final_snapshot         = true
   publicly_accessible         = true
-  parameter_group_name        = "utf8mb4"
 
   tags = {
     Name = "heticmadu-${var.stage}-db"
     stage     = var.stage
     component = "db"
-  }
-}
-
-resource "aws_db_parameter_group" "utf8mb4" {
-  name        = "utf8mb4"
-  family      = "mysql5.7"
-  description = "enable 'real' utf8 (utf8mb4)"
-
-  parameter {
-    name  = "character_set_client"
-    value = "utf8mb4"
-  }
-
-  parameter {
-    name  = "character_set_database"
-    value = "utf8mb4"
-  }
-
-  parameter {
-    name  = "character_set_connection"
-    value = "utf8mb4"
-  }
-
-  parameter {
-    name  = "character_set_server"
-    value = "utf8mb4"
-  }
-
-  parameter {
-    name  = "character_set_results"
-    value = "utf8mb4"
-  }
-
-  parameter {
-    name  = "collation_server"
-    value = "utf8mb4_unicode_ci"
-  }
-
-  parameter {
-    name  = "collation_connection"
-    value = "utf8mb4_unicode_ci"
   }
 }
 
