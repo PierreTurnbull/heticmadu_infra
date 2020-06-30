@@ -4,7 +4,7 @@ The infrastructure deployment code for a school project.
 
 ## How it works
 
-Terraform deploys an AWS EC2 instance, a key-pair and a security group in the default VPC.
+This repository is meant to create and configure the infrastructure. Application deployment is done on application repositories ([api](https://github.com/PierreTurnbull/heticmadu_api) and [client](https://github.com/ikonx/heticmadu_client)). First, deploy the infrastructure from this repository. Then you can deploy the applications on the newly created infrastructure, by pushing your changes on branch master or preprod of the application.
 
 ## Deployment instructions
 
