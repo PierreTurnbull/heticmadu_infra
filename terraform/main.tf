@@ -33,6 +33,8 @@ module "preprod" {
   ami = data.aws_ami.ubuntu.id
   key_name = aws_key_pair.heticmadu.key_name
   stage = "preprod"
+  db_username = var.db_username
+  db_password = var.db_password
 }
 
 module  "prod" {
@@ -41,4 +43,6 @@ module  "prod" {
   ami = data.aws_ami.ubuntu.id
   key_name = aws_key_pair.heticmadu.key_name
   stage = "prod"
+  db_username = var.db_username
+  db_password = var.db_password
 }

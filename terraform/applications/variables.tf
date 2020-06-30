@@ -13,3 +13,11 @@ variable "stage" {
   default = "preprod"
   description = "Stage in which the project is deployed"
 }
+
+variable "db_username" {
+  type = string
+}
+
+variable "db_password" {
+  type = string
+}
