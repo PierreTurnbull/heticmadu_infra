@@ -92,6 +92,8 @@ Run Ansible Playbooks
 ansible-playbook ./main.yml --user ubuntu --key <ssh/public/key/path> -i ./inventory/ec2.py
 ```
 
+ec2.py is a programmatic way to find all EC2 instances IPs.
+
 ## TODO
 
 // todo : put all instructions in 1 script for easier deployment
