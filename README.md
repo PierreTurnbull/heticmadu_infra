@@ -47,7 +47,7 @@ Install Python dependencies
 pip install boto ansible
 ```
 
-Optionally, enable to find regions that are not referenced in Boto, such as eu-west-3
+Boto enables accessing AWS resources. You may use a region that is not supported by Boto, such as eu-west-3. To prevent such a problem, enable automatic region finding:
 
 ```bash
 export BOTO_USE_ENDPOINT_HEURISTICS=true
@@ -98,6 +98,8 @@ Run Ansible Playbooks
 ```bash
 ansible-playbook ./main.yml --user ubuntu --key <ssh/public/key/path> -i ./inventory/ec2.py
 ```
+
+ec2.py is a programmatic way to find all EC2 instances IPs.
 
 ## TODO
 
