@@ -13,6 +13,7 @@ export AWS_SECRET_ACCESS_KEY=<secret>
 export TF_VAR_db_username=<username>
 export TF_VAR_db_password=<password>
 export SSH_KEY_PATH=<path>
+export TF_VAR_vpc_id=<vpc id>
 
 # don't bother reading
 export BOTO_USE_ENDPOINT_HEURISTICS=true
@@ -63,9 +64,15 @@ terraform init
 
 Prepare credentials for the database:
 
-```
+```bash
 export TF_VAR_db_username=<username>
 export TF_VAR_db_password=<password>
+```
+
+Export the id of your vpc
+
+```bash
+export TF_VAR_vpc_id=<vpc id>
 ```
 
 To deploy the infrastructure, run

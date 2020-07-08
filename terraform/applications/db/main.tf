@@ -1,6 +1,6 @@
 resource "aws_security_group" "db" {
   name   = "heticmadu-${var.stage}-db"
-  vpc_id = "vpc-d1ced5b8"
+  vpc_id = var.vpc_id
 
   ingress {
     from_port = 3306
@@ -33,7 +33,7 @@ resource "aws_db_instance" "db" {
   publicly_accessible         = true
 
   tags = {
-    Name = "heticmadu-${var.stage}-db"
+    Name      = "heticmadu-${var.stage}-db"
     stage     = var.stage
     component = "db"
   }

@@ -27,15 +27,15 @@ data "aws_ami" "ubuntu" {
 
 # Modules
 
-module "preprod" {
-  source = "./applications"
+# module "preprod" {
+#   source = "./applications"
 
-  ami = data.aws_ami.ubuntu.id
-  key_name = aws_key_pair.heticmadu.key_name
-  stage = "preprod"
-  db_username = var.db_username
-  db_password = var.db_password
-}
+#   ami = data.aws_ami.ubuntu.id
+#   key_name = aws_key_pair.heticmadu.key_name
+#   stage = "preprod"
+#   db_username = var.db_username
+#   db_password = var.db_password
+# }
 
 module  "prod" {
   source = "./applications"
@@ -45,4 +45,5 @@ module  "prod" {
   stage = "prod"
   db_username = var.db_username
   db_password = var.db_password
+  vpc_id      = var.vpc_id
 }
