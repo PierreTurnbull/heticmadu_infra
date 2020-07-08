@@ -37,12 +37,12 @@ data "aws_ami" "ubuntu" {
 #   db_password = var.db_password
 # }
 
-module  "prod" {
-  source = "./applications"
+module "prod" {
+  source      = "./applications"
 
-  ami = data.aws_ami.ubuntu.id
-  key_name = aws_key_pair.heticmadu.key_name
-  stage = "prod"
+  ami         = data.aws_ami.ubuntu.id
+  key_name    = aws_key_pair.heticmadu.key_name
+  stage       = "prod"
   db_username = var.db_username
   db_password = var.db_password
   vpc_id      = var.vpc_id

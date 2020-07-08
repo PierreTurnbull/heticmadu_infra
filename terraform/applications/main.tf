@@ -22,4 +22,5 @@ module "db" {
   authorized_security_group_id  = module.api.authorized_security_group_id
   db_username                   = var.db_username
   db_password                   = var.db_password
+  vpc_id                        = var.vpc_id
 }
